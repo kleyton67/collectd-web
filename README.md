@@ -67,6 +67,39 @@ python runserver.py
 
 Once running, open your web browser and navigate to the provided address (typically `http://localhost:8000`) to begin monitoring your systems.
 
+### Compose
+Create .env file on root
+```bash
+AUTH_PASSWORD="pass" #change
+AUTH_USER="user"  # change
+```
+
+Build images
+```bash
+docker compose build
+```
+
+Set your collect conf and rrd files on docker-compose
+
+```bash
+.
+.
+.
+
+    volumes:
+      - /etc/collectd:/etc/collectd:ro
+      - /var/lib/collectd/rrd:/var/lib/collectd/rrd:ro
+
+
+```
+
+Up services
+```bash
+docker compose up -d
+```
+
+Access it on `http://localhost:8200`
+
 ## 🔗 Links
 
 - **Project Homepage:** [Collectd-web on GitHub](http://github.com/httpdss/collectd-web)
@@ -83,3 +116,6 @@ If you find Collectd-web useful, please consider supporting its development. Don
 ## 📝 Contributing
 
 We welcome contributions from the community. For details on how to get involved, please see our [CONTRIBUTING.md](.github/CONTRIBUTING.md).
+
+## To generate a new bcrypt pass
+python3 -c 'from passlib.hash import bcrypt; print(bcrypt.hash("yourpassword"))'

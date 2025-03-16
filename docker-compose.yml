@@ -1,0 +1,12 @@
+services:
+  collected-web:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8200:8888
+    volumes:
+      - /etc/collectd:/etc/collectd:ro
+      - /var/lib/collectd/rrd:/var/lib/collectd/rrd:ro
