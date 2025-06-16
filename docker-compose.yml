@@ -10,3 +10,4 @@ services:
     volumes:
       - /etc/collectd:/etc/collectd:ro
       - /var/lib/collectd/rrd:/var/lib/collectd/rrd:ro
+      - /usr/lib/collectd/:/usr/lib/collectd/:ro
