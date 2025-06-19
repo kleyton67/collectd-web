@@ -5,7 +5,7 @@
 }
 
 .header-content {
-    height: 70px;
+    height: 100px;
 }
 
 #logo {
@@ -260,7 +260,7 @@ a:focus {
     text-indent: 4px;
     color:#EC8E0C;
     background-image:none !important;
-    font-size:10px;
+    font-size:20px;
     width:100%;
     padding-left:4px;
     padding-right:4px;
