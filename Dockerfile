@@ -13,4 +13,4 @@ RUN apt update && \
 
 EXPOSE 8888
 
-CMD ["python", "run_w_fastapi.py"]
+CMD ["python", "runserver.py"]
